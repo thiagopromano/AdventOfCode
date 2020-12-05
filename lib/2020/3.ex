@@ -25,7 +25,7 @@ aoc 2020, 3 do
   def fetch_char({line, line_num}) do
     line
     |> String.graphemes()
-    |> Enum.at(rem(line_num*3, @width))
+    |> Enum.at(rem(line_num * 3, @width))
   end
 
   def fetch_char({line, line_num}, right, down) do
@@ -33,7 +33,7 @@ aoc 2020, 3 do
       0 ->
         line
         |> String.graphemes()
-        |> Enum.at(rem(div(line_num*right,down), @width))
+        |> Enum.at(rem(div(line_num * right, down), @width))
       _ -> "noop"
     end
   end

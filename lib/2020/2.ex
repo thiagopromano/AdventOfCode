@@ -21,11 +21,11 @@ aoc 2020, 2 do
   def valid_password2?(%{min: min, max: max, letter: letter, string: string}) do
     first_letter =
       String.graphemes(string)
-      |> Enum.at(min-1)
+      |> Enum.at(min - 1)
 
     second_letter =
       String.graphemes(string)
-      |> Enum.at(max-1)
+      |> Enum.at(max - 1)
 
     has_first = first_letter == letter
     has_second = second_letter == letter

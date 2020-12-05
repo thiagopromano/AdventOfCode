@@ -19,14 +19,14 @@ aoc 2020, 1 do
   end
 
   def to_tuple2(list) do
-    for a <- list, b <- list, c <- list, a+b+c == 2020 do
-      {a, b, c, a+b+c, a*b*c}
+    for a <- list, b <- list, c <- list, a + b + c == 2020 do
+      {a, b, c, a + b + c, a * b * c}
     end
   end
 
   def to_tuple1(list) do
-    for a <- list, b <- list, a+b == 2020 do
-      {a, b, a+b, a*b}
+    for a <- list, b <- list, a + b == 2020 do
+      {a, b, a + b, a * b}
     end
   end
 end
