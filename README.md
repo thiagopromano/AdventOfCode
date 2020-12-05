@@ -1,21 +1,16 @@
-# Advent
+# Advent Of Code
 
-**TODO: Add description**
+My solutions to the Advent of Code
 
-## Installation
+## How to run
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `advent` to your list of dependencies in `mix.exs`:
+Assert you have Elixir 1.11 or greater installed.
 
-```elixir
-def deps do
-  [
-    {:advent, "~> 0.1.0"}
-  ]
-end
+Run 
+
 ```
+iex -S mix
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/advent](https://hexdocs.pm/advent).
+import AOC
 
+p1(1,2020)  # Change p1 to p2 to the second part, and 1 to the day you want to run.
