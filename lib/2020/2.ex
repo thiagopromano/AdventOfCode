@@ -1,10 +1,19 @@
-defmodule Day2 do
+import AOC
+
+aoc 2020, 2 do
   use Bitwise
 
-  def get_report do
+  def p1 do
     read_file()
     |> Enum.map(&with_fields/1)
-    # |> Enum.map(&with_count/1)
+    |> Enum.map(&with_count/1)
+    |> Enum.filter(&valid_password1?/1)
+    |> Enum.count()
+  end
+
+  def p2 do
+    read_file()
+    |> Enum.map(&with_fields/1)
     |> Enum.filter(&valid_password2?/1)
     |> Enum.count()
   end
@@ -55,7 +64,7 @@ defmodule Day2 do
   end
 
   def read_file() do
-    File.stream!("day02.in")
+    input_stream()
     |> Stream.map(&String.replace(&1, "\n", ""))
   end
 end
