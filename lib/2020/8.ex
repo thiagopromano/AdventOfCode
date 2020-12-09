@@ -1,8 +1,6 @@
 import AOC
 
 aoc 2020, 8 do
-
-
   def p1 do
     pid =
       get_instructions()
