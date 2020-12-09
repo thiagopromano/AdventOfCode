@@ -1,6 +1,8 @@
 import AOC
 
 aoc 2020, 8 do
+
+
   def p1 do
     pid =
       get_instructions()
@@ -88,7 +90,7 @@ aoc 2020, 8 do
     len = length(instructions)
 
     0..len
-    |> Enum.find(fn idx ->
+    |> Enum.find_value(fn idx ->
       permute(instructions, idx)
       |> get_result()
     end)
