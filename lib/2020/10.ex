@@ -17,7 +17,6 @@ aoc 2020, 10 do
   def p1 do
     get_input()
     |> Enum.chunk_every(2, 1, :discard)
-    |> IO.inspect()
     |> Enum.map(fn [min, max] -> max - min end)
     |> Enum.frequencies()
     |> (fn %{1 => n1, 3 => n3} -> n1 * n3 end).()
@@ -41,7 +40,7 @@ aoc 2020, 10 do
     get_input()
     |> count_permutations()
   end
-  
+
   def count_permutations([head | tail]) do
     case Memoization.value(head) do
       {:ok, num} -> num
