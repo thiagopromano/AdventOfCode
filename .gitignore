@@ -23,3 +23,5 @@ erl_crash.dump
 advent-*.tar
 
 .history
+
+config/config_secret.exs
