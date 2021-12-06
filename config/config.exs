@@ -4,4 +4,5 @@ config :advent_of_code_utils, session: "53616c7465645f5f04d9148837814a1cde466f99
 
 config :advent_of_code_utils, auto_reload?: true
 
-import_config("config_secret.exs")
+
+if File.exists?("config_secret.exs"), do: import_config("config_secret.exs")

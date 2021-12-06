@@ -1,6 +1,7 @@
 import AOC
 
 aoc 2020, 7 do
+  use InputHelper
   @gold "shiny gold"
 
   def p1 do
