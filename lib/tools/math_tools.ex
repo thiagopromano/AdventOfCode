@@ -1,17 +1,19 @@
 defmodule MathTools do
+  @moduledoc false
   # Does the convolution of two vectors and removes the start and end transient
   def conv(a, b) do
-    revB = Enum.reverse(b)
+    rev_b = Enum.reverse(b)
 
     a
-    |> Enum.chunk_every(length(revB), 1)
+    |> Enum.chunk_every(length(rev_b), 1)
     |> Enum.map(fn chunk ->
-      Enum.zip(chunk, revB)
+      Enum.zip(chunk, rev_b)
       |> Enum.map(fn {a, b} -> a * b end)
       |> Enum.sum()
     end)
   end
 
+  # -dialyzer({nowarn_function, pointwise_sum/2}).
   def pointwise_sum(a, b) do
     Enum.zip(a, b)
     |> Enum.map(fn {a, b} -> a + b end)

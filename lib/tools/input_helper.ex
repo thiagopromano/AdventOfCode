@@ -1,5 +1,6 @@
 defmodule InputHelper do
-  defmacro __using__(opts) do
+  @moduledoc false
+  defmacro __using__(_opts) do
     quote do
       defp input_string do
         Process.get("aoc_input_string", super())

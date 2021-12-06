@@ -46,7 +46,7 @@ aoc 2020, 2 do
     %{original: line, min: min, max: max, letter: letter, string: string}
   end
 
-  def with_count(%{string: string} = data) do
+  def with_count(data = %{string: string}) do
     Map.put(data, :count, count_ocurrences(string))
   end
 

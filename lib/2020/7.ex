@@ -50,7 +50,7 @@ aoc 2020, 7 do
 
   def bags_inside(map, key) do
     result = map
-    |> Map.get(key)
+    |> Map.fetch!(key)
     |> Enum.reduce(1, fn {name, amount}, acc -> acc + amount * bags_inside(map, name) end)
     result
   end

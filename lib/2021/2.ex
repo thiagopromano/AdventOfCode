@@ -50,8 +50,9 @@ aoc 2021, 2 do
       fn
         {0, vertical}, {prev_horizontal, prev_vertical, prev_aim} ->
           {prev_horizontal, prev_vertical, prev_aim + vertical}
+
         {horizontal, 0}, {prev_horizontal, prev_vertical, prev_aim} ->
-          {prev_horizontal + horizontal, prev_vertical + prev_aim*horizontal, prev_aim}
+          {prev_horizontal + horizontal, prev_vertical + prev_aim * horizontal, prev_aim}
       end
     )
     |> then(fn {horizontal, vertical, _aim} -> horizontal * vertical end)

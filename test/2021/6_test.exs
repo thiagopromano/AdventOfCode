@@ -8,6 +8,6 @@ defmodule AdventTest20216 do
       assert D6.p1() == 5934
   end
   test "p2" do
-      assert D6.p2() == 26984457539
+      assert D6.p2() == 26_984_457_539
   end
 end

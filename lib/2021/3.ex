@@ -83,7 +83,7 @@ aoc 2021, 3 do
       |> then(&Enum.fetch!(input, &1))
       |> bits_to_decimal()
 
-      oxigen*co2
+      oxigen * co2
   end
 
   def filter([{_, index} | []], _), do: index

@@ -22,21 +22,21 @@ aoc 2021, 6 do
 
   def simulate_fish_increase(fish_array) do
     Enum.flat_map(fish_array,
-    fn 0 -> [6,8]
-      other_number -> [other_number-1]
+    fn 0 -> [6, 8]
+      other_number -> [other_number - 1]
    end)
   end
   def p1 do
     fish_evolution = get_fish_evolution()
     get_input()
-    |> Enum.map(fn day -> Map.fetch!(fish_evolution, 80-day) end)
+    |> Enum.map(fn day -> Map.fetch!(fish_evolution, 80 - day) end)
     |> Enum.sum()
   end
 
   def p2 do
     fish_evolution = get_fish_evolution2()
     get_input()
-    |> Enum.map(fn day -> Map.fetch!(fish_evolution, 256-day) end)
+    |> Enum.map(fn day -> Map.fetch!(fish_evolution, 256 - day) end)
     |> Enum.sum()
   end
 
@@ -57,7 +57,7 @@ aoc 2021, 6 do
     multiplying = Map.fetch!(fish_map, 0)
 
     0..8
-    |> Enum.map(fn day -> {day, Map.get(fish_map, day+1, 0)} end)
+    |> Enum.map(fn day -> {day, Map.get(fish_map, day + 1, 0)} end)
     |> Map.new()
     |> Map.update!(6, &(&1 + multiplying))
     |> Map.update!(8, &(&1 + multiplying))

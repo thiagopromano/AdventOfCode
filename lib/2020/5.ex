@@ -18,7 +18,7 @@ aoc 2020, 5 do
     |> Enum.reduce_while(
       -1,
       fn
-        elem, acc when acc + 2 == elem -> {:halt, acc+1}
+        elem, acc when acc + 2 == elem -> {:halt, acc + 1}
         elem, _ -> {:cont, elem}
       end
     )

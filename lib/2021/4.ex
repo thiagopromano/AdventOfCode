@@ -97,9 +97,6 @@ aoc 2021, 4 do
   end
 
   def play_bingo_last(sequence, games) do
-    if length(sequence) == 0 do
-      IO.inspect(games)
-    end
     [next_number | tail_sequence] = sequence
     games = update_games(next_number, games)
 
