@@ -1,5 +1,4 @@
 defmodule Benchmark do
-  @moduledoc false
   def benchmark() do
     Benchee.run(%{
       "p1" => fn -> Y2021.D1.p1() end,

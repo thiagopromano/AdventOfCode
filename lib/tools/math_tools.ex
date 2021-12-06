@@ -1,5 +1,4 @@
 defmodule MathTools do
-  @moduledoc false
   # Does the convolution of two vectors and removes the start and end transient
   def conv(a, b) do
     rev_b = Enum.reverse(b)
