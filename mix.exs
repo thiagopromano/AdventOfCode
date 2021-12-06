@@ -21,7 +21,7 @@ defmodule Advent.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:advent_of_code_utils, "~> 0.1"},
+      {:advent_of_code_utils, "~> 1.0"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:benchee, "~> 1.0", only: :dev},
     ]
