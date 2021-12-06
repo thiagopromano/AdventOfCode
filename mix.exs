@@ -23,7 +23,7 @@ defmodule Advent.MixProject do
     [
       {:advent_of_code_utils, "~> 1.0"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:benchee, "~> 1.0", only: :dev},
+      {:benchee, "~> 1.0", only: [:dev, :test]},
     ]
   end
 end
