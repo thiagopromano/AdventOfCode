@@ -4,9 +4,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
-    with:    
-      otp: '23.3'
-      elixir: '1.12.3'
+    strategy:
+      matrix:
+        otp: ['23.3']
+        elixir: ['1.12.3']
     steps:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
