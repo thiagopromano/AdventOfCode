@@ -12,7 +12,6 @@ defmodule MathTools do
     end)
   end
 
-  # -dialyzer({nowarn_function, pointwise_sum/2}).
   def pointwise_sum(a, b) do
     Enum.zip(a, b)
     |> Enum.map(fn {a, b} -> a + b end)
@@ -23,5 +22,11 @@ defmodule MathTools do
 
   def transpose(a) do
     [Enum.map(a, &hd/1) | transpose(Enum.map(a, &tl/1))]
+  end
+
+  def arithmetic_series_sum(a, b) when a > b, do: arithmetic_series_sum(b, a)
+
+  def arithmetic_series_sum(a, b) do
+    (b - a + 1) * (a + b) / 2
   end
 end
