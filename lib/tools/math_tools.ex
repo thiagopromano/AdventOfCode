@@ -29,4 +29,8 @@ defmodule MathTools do
   def arithmetic_series_sum(a, b) do
     (b - a + 1) * (a + b) / 2
   end
+
+  def permutations([]), do: [[]]
+  def permutations(list),
+    do: for(elem <- list, rest <- permutations(list -- [elem]), do: [elem | rest])
 end
