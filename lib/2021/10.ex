@@ -6,7 +6,7 @@ aoc 2021, 10 do
   @opening_chars [?(, ?[, ?{, ?<]
   @closing_chars [?), ?], ?}, ?>]
   @respective_closing Enum.zip(@closing_chars, @opening_chars) |> Map.new()
-  @scoring_p1 Enum.zip(@closing_chars, [3, 57, 1197, 25137]) |> Map.new()
+  @scoring_p1 Enum.zip(@closing_chars, [3, 57, 1197, 25_137]) |> Map.new()
   @scoring_p2 Enum.zip(@opening_chars, 1..4) |> Map.new()
 
   def get_input do
@@ -55,13 +55,13 @@ aoc 2021, 10 do
     |> Enum.filter(&(&1 != 0))
     |> Enum.sort()
 
-    Enum.fetch!(scores, floor(length(scores)/2))
+    Enum.fetch!(scores, floor(length(scores) / 2))
   end
 
   def calculate_p2_score({:non_closed, non_closed_sequence}) do
     non_closed_sequence
     |> Enum.map(&(Map.fetch!(@scoring_p2, &1)))
-    |> Enum.reduce(0, fn score, total_score -> total_score*5 + score end)
+    |> Enum.reduce(0, fn score, total_score -> total_score * 5 + score end)
   end
 
   def calculate_p2_score(_), do: 0

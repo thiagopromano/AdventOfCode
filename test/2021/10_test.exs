@@ -17,10 +17,10 @@ defmodule Y2021.D10Test do
   """)
 
   test "p1" do
-    assert D10.p1() == 26397
+    assert D10.p1() == 26_397
   end
 
   test "p2" do
-    assert D10.p2() == 288957
+    assert D10.p2() == 288_957
   end
 end
