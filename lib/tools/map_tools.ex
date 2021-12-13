@@ -12,4 +12,13 @@ defmodule MapTools do
   end
 
   def point_sum({a, b}, {c, d}), do: {a + c, b + d}
+
+  def draw_map(map, lines, columns) do
+    map = Enum.map(map, fn pos -> {pos, ?#} end) |> Map.new()
+    0..lines * columns - 1
+    |> Enum.map(&Map.get(map, {rem(&1, columns), div(&1, columns)}, ?.))
+    |> Enum.chunk_every(columns)
+    |> Enum.join("\n")
+    |> then(&(&1 <> "\n"))
+  end
 end
