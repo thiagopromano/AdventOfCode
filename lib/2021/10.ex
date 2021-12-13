@@ -42,9 +42,6 @@ aoc 2021, 10 do
           ^respective -> apply_rules(input_tail, tl(stack))
           _ -> {:illegal, input_head}
         end
-
-      true ->
-        raise("error, #{input_head}")
     end
   end
 
