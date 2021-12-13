@@ -58,7 +58,7 @@ aoc 2021, 12 do
     |> calculate_paths_to_end_p2()
   end
 
-  def calculate_paths_to_end_p2(map),
+  def calculate_paths_to_end_p2(map),gi
     do: calculate_paths_to_end_p2(map, MapSet.new(), "start", false)
 
   def calculate_paths_to_end_p2(_map, _places_went, "end", _already_visited_small_twice), do: 1
