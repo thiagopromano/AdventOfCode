@@ -11,7 +11,15 @@ defmodule MapTools do
     |> Map.new()
   end
 
+  def string_to_2d_map(str) do
+    str
+    |> String.split("\n", trim: true)
+    |> Enum.map(&String.graphemes/1)
+    |> to_2d_map()
+  end
+
   def point_sum({a, b}, {c, d}), do: {a + c, b + d}
+  def point_operation({a, b}, {c, d}, f), do: {f.(a, c), f.(b, d)}
 
   def draw_map(map, lines, columns) do
     map = Enum.map(map, fn pos -> {pos, ?#} end) |> Map.new()
