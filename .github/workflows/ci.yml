@@ -14,5 +14,8 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - run: mix deps.get
-      - run: mix test
+      - name: Run Elixir Tests
+        working-directory: ./2020-2021
+        run: |
+          mix deps.get
+          mix test
