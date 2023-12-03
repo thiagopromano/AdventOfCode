@@ -106,7 +106,7 @@ pub mod day3 {
     #[cfg(test)]
     mod tests {
         use super::*;
-
+        use crate::input_helper::input_helper;
 
         #[test]
         fn day3_example1() {
@@ -126,8 +126,7 @@ pub mod day3 {
 
         #[test]
         fn day3_part1() {
-            let input = include_str!("../input/day3.txt");
-            assert_eq!(p1(input.to_string()), "543867");
+            assert_eq!(p1(input_helper::get_input(3)), "543867");
         }
 
         #[test]
@@ -147,8 +146,7 @@ pub mod day3 {
 
         #[test]
         fn day3_part2() {
-            let input = include_str!("../input/day3.txt");
-            assert_eq!(p2(input.to_string()), "72422");
+            assert_eq!(p2(input_helper::get_input(3)), "79613331");
         }
     }
 }

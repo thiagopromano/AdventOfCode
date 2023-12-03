@@ -108,6 +108,7 @@ pub mod day2 {
     #[cfg(test)]
     mod tests {
         use super::*;
+        use crate::input_helper::input_helper;
 
         #[test]
         fn parse_game_test() {
@@ -134,38 +135,37 @@ pub mod day2 {
                 ],
             })
         }
-    }
 
-    #[test]
-    fn day2_example1() {
-        let example =
-            "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+
+        #[test]
+        fn day2_example1() {
+            let example =
+                "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
 Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green";
-        assert_eq!(p1(example.to_string()), "8");
-    }
+            assert_eq!(p1(example.to_string()), "8");
+        }
 
-    #[test]
-    fn day2_part1() {
-        let input = include_str!("../input/day2.txt");
-        assert_eq!(p1(input.to_string()), "2105");
-    }
+        #[test]
+        fn day2_part1() {
+            assert_eq!(p1(input_helper::get_input(2)), "2105");
+        }
 
-    #[test]
-    fn day2_example2() {
-        let example = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+        #[test]
+        fn day2_example2() {
+            let example = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
 Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green";
-        assert_eq!(p2(example.to_string()), "2286");
-    }
+            assert_eq!(p2(example.to_string()), "2286");
+        }
 
-    #[test]
-    fn day2_part2() {
-        let input = include_str!("../input/day2.txt");
-        assert_eq!(p2(input.to_string()), "72422");
+        #[test]
+        fn day2_part2() {
+            assert_eq!(p2(input_helper::get_input(2)), "72422");
+        }
     }
 }

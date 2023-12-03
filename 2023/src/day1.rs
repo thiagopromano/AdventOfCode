@@ -54,6 +54,7 @@ pub mod day1 {
 
 #[cfg(test)]
 mod tests {
+    use crate::input_helper::input_helper;
     use super::*;
 
     #[test]
@@ -68,8 +69,7 @@ treb7uchet\n";
 
     #[test]
     fn day1_part1() {
-        let input = include_str!("../input/day1.txt");
-        assert_eq!(day1::p1(input.to_string()), "56506");
+        assert_eq!(day1::p1(input_helper::get_input(1)), "56506");
     }
 
     #[test]
@@ -88,7 +88,6 @@ zoneight234\n\
 
     #[test]
     fn day1_part2() {
-        let input = include_str!("../input/day1.txt");
-        assert_eq!(day1::p2(input.to_string()), "56017");
+        assert_eq!(day1::p2(input_helper::get_input(1)), "56017");
     }
 }
