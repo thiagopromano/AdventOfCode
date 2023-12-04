@@ -1,5 +1,4 @@
 pub mod day4 {
-    use std::collections::HashMap;
     use regex::Regex;
 
     pub fn p1(input: String) -> String {
@@ -20,13 +19,15 @@ pub mod day4 {
             .map(|line| parse_card(line))
             .collect();
 
-        let mut scratch_wins : HashMap<usize, u32> = HashMap::new();
-        let mut amount_scratchcards = 0;
+        let mut scratches = vec![1; games.len()];
         for i in 0..games.len() {
-            amount_scratchcards += calculate_amount_scratchcards(i, &games, &mut scratch_wins);
+            let amount_wins = calculate_amount_wins(&games[i]) as usize;
+            for n in 1..=amount_wins {
+                scratches[i + n] += scratches[i];
+            }
         }
 
-        amount_scratchcards.to_string()
+        scratches.iter().sum::<u32>().to_string()
     }
 
 
@@ -62,25 +63,6 @@ pub mod day4 {
         }
 
         amount_winning
-    }
-
-    fn calculate_amount_scratchcards(game_number: usize, games: &Vec<Game>, scratch_wins: &mut HashMap<usize, u32>) -> u32 {
-        let mut amount_scratchcards = 1;
-        let game = games.get(game_number).unwrap();
-        let amount_wins : usize = calculate_amount_wins(game) as usize;
-
-        for n  in 1..=amount_wins {
-            let new_game = game_number + n;
-            if scratch_wins.contains_key(&new_game) {
-                amount_scratchcards += scratch_wins.get(&new_game).unwrap();
-                continue;
-            }
-            amount_scratchcards += calculate_amount_scratchcards(new_game, games, scratch_wins);
-        }
-
-        scratch_wins.insert(game_number, amount_scratchcards);
-
-        amount_scratchcards
     }
 
 
